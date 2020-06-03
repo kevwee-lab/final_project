@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+  <div class="col mb-6">
+    <div class="card h-100" style="width: 84em">
+      <div class="card-body">
+        <h4 class="card-title">Home View</h4>
+        <p></p>
+         <form method="GET" action="." style="margin-bottom: 2em;">
+           {{ form|crispy }}
+            <div class="form-group">
+      <p></p>
+    
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+  </form>
+          <div class="card-body">
+           <table class="table table-sm table-bordered table-striped table-hover">
+            <thead class="thead-dark">
+        <tr>
+            <th>Year</th>
+            <th>Max Temperature</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in data %}
+        <tr>
+        <td>{{item.0}}</td>
+        <td>{{item.1}}</td>
+        </tr>
+        </tbody>
+        <div>
+    </div>
+</div>
+{% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
